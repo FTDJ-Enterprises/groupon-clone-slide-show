@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/FTDJ-Enterprises/groupon-clone-slide-show/issues"
   },
-  "homepage": "https://github.com/FTDJ-Enterprises/groupon-clone-slide-show#readme"
+  "homepage": "https://github.com/FTDJ-Enterprises/groupon-clone-slide-show#readme",
+  "devDependencies": {
+    "faker": "^4.1.0"
+  },
+  "dependencies": {
+    "mongoose": "^5.7.4"
+  }
 }
