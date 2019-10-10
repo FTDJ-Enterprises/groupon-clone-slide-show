@@ -19,14 +19,7 @@
 
 **Generate Fake Data**
 
-Use `fakeDataGen.js` to create a JSON file with contrived data. Use this file to populate your database.
-
-## Requirements
-
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
-
-- Node 6.13.0
-- etc
+1. `npm run seed-data`
 
 ## Development
 
