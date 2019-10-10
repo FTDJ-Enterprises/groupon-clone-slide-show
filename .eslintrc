@@ -6,7 +6,7 @@
   },
   "overrides":  [
     {
-      "files": ["server/*.js", "fakeDataGen.js"],
+      "files": ["server/*.js"],
       "rules": {
         "no-console": 0
       }
