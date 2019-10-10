@@ -17,7 +17,9 @@
 
 ## Usage
 
-> Some usage instructions
+**Generate Fake Data**
+
+Use `fakeDataGen.js` to create a JSON file with contrived data. Use this file to populate your database.
 
 ## Requirements
 
