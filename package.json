@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/index.js",
-    "dev-server": "nodemon server/index.js",
+    "test": "jest",
+    "start": "node server/server.js",
+    "dev-server": "nodemon server/server.js",
     "seed-data": "node fakeDataGen.js && mongoimport --db groupon-slide-show --collection productImages --file fakeData.json --jsonArray --drop"
   },
   "repository": {
@@ -26,11 +26,19 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "nodemon": "^1.19.3"
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.3",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mongoose": "^5.7.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules"
+    ]
   }
 }
