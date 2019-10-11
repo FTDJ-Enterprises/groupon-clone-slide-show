@@ -27,3 +27,6 @@ dist/
 
 # Fake data
 fakeData.json
+
+# Bundle
+bundle.js

@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node server/server.js",
-    "dev-server": "nodemon server/server.js",
-    "seed-data": "node fakeDataGen.js && mongoimport --db groupon-slide-show --collection productImages --file fakeData.json --jsonArray --drop"
+    "start": "node server/index.js",
+    "dev-server": "nodemon server/index.js",
+    "seed-data": "node fakeDataGen.js && mongoimport --db groupon-slide-show --collection productImages --file fakeData.json --jsonArray --drop",
+    "webpack-dev": "webpack --mode development -w",
+    "webpack-build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,11 @@
   },
   "homepage": "https://github.com/FTDJ-Enterprises/groupon-clone-slide-show#readme",
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/preset-react": "^7.6.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
@@ -28,12 +35,17 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
     "nodemon": "^1.19.3",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9"
   },
   "dependencies": {
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "mongoose": "^5.7.4"
+    "mongoose": "^5.7.4",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
   },
   "jest": {
     "testEnvironment": "node",
