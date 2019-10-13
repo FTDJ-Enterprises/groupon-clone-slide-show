@@ -1,9 +1,9 @@
 import React from 'react';
-import MainPicture from '../client/MainPicture';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import MainPicture from '../client/MainPicture';
 
-Enzyme.configure({adapter: new Adapter() });
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('MainPicture Component', () => {
   test('MainPicture zooms and pans according to the location of the mouseover', () => {
@@ -20,7 +20,7 @@ describe('MainPicture Component', () => {
         offsetTop: 0,
         offsetWidth: 650,
         offsetHeight: 400,
-      },
+      }
     });
     expect(wrapper.find('.main-picture').props().scale).toEqual(1.5);
     expect(wrapper.find('.main-picture').props().transformOrigin).toEqual('20% 20%');
