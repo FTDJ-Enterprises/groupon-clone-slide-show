@@ -1,8 +1,4 @@
-const express = require('express');
-
-const app = express();
-
-app.use('/', express.static('public'));
+const app = require('./app.js');
 
 const port = process.env.PORT || 3002;
 
