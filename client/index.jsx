@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MainPicture from './MainPicture';
 
 import './index.css';
 
-const App = () => <div>Hello world!</div>;
-
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(
+  <MainPicture pictureUrl="https://via.placeholder.com/650x400" />,
+  document.getElementById('app')
+);
