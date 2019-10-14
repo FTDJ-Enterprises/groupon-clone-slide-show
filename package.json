@@ -4,7 +4,7 @@
   "description": "",
   "main": "server/.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "start": "node server/server.js",
     "dev-server": "nodemon server/server.js",
     "seed-data": "node fakeDataGen.js && mongoimport --db groupon-slide-show --collection productImages --file fakeData.json --jsonArray --drop",
@@ -25,8 +25,11 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-import": "^2.18.2",
@@ -35,8 +38,9 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
     "nodemon": "^1.19.3",
-    "supertest": "^4.0.2",
+    "react-test-renderer": "^16.10.2",
     "style-loader": "^1.0.0",
+    "supertest": "^4.0.2",
     "webpack": "^4.41.0",
     "webpack-cli": "^3.3.9"
   },
@@ -44,8 +48,10 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "mongoose": "^5.7.4",
+    "prop-types": "^15.7.2",
     "react": "^16.10.2",
-    "react-dom": "^16.10.2"
+    "react-dom": "^16.10.2",
+    "styled-components": "^4.4.0"
   },
   "jest": {
     "testEnvironment": "node",
