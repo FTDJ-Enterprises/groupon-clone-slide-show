@@ -14,7 +14,7 @@ for (let i = 1; i <= numRecords; i++) {
   const numOfImages = faker.random.number({ min: 1, max: 10 });
   const imagesArray = [];
   for (let j = 0; j < numOfImages; j++) {
-    imagesArray.push(faker.image.image());
+    imagesArray.push(faker.image.imageUrl(650, 400));
   }
 
   const record = {
