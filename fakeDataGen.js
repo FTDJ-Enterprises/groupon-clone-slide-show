@@ -1,20 +1,30 @@
-const faker = require('faker');
 const mongoose = require('mongoose');
 const fs = require('fs');
 
 // Output array
 const outputArray = [];
 
-// Seed so we can reuse this file and get the same results
-faker.seed(100);
-
 // Create 100 records
 const numRecords = 100;
 for (let i = 1; i <= numRecords; i++) {
-  const numOfImages = faker.random.number({ min: 1, max: 10 });
+  const imageIds = [
+    445,
+    3,
+    225,
+    21,
+    20,
+    201,
+    2,
+    180,
+    160,
+    119
+  ];
+
+  const numOfImages = Math.floor(Math.random() * Math.floor(imageIds.length - 1)) + 1;
+
   const imagesArray = [];
   for (let j = 0; j < numOfImages; j++) {
-    imagesArray.push(faker.image.imageUrl(650, 400));
+    imagesArray.push(`http://picsum.photos/id/${imageIds[j]}/650/400`);
   }
 
   const record = {
