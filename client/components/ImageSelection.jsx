@@ -7,9 +7,12 @@ const Thumbnail = styled.div`
   width: 57px;
   background-image: url(${(props) => props.productImage});
   background-size: cover;
-  margin: ${(props) => (props.first ? '0px 5px 0px 0px' : '0px 5px')}
-  border: ${(props) => (props.selected ? '3px solid teal' : 'none')}
+  margin: 0px 5px;
+  border: ${(props) => (props.selected ? '3px solid teal;' : 'none;')}
   border-radius: 5px;
+  &:first-child {
+    margin: 0px 5px 0px 0px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -28,7 +31,6 @@ const ImageSelection = ({ productImages, selectedImageIndex, selectImage }) => {
         <Thumbnail
           productImage={productImage}
           selected={selectedImageIndex === i}
-          first={i === 0}
           key={i}
           onClick={() => selectImage(i)}
           id={`thumbnail-${i}`}

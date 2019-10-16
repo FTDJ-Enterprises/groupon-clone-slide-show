@@ -4,5 +4,6 @@ export default () => {
 
   return fetch(`/api/images/${productId}`)
     .then((res) => res.json())
-    .then((data) => data[0].imageUrls);
+    .then((data) => data[0].imageUrls)
+    .catch((err) => console.error(err));
 };
