@@ -37,6 +37,7 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "jest": "^24.9.0",
+    "jsdom": "^15.2.0",
     "nodemon": "^1.19.3",
     "react-test-renderer": "^16.10.2",
     "style-loader": "^1.0.0",
@@ -57,6 +58,7 @@
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules"
-    ]
+    ],
+    "setupFilesAfterEnv": ["./tests/setup.js"]
   }
 }
