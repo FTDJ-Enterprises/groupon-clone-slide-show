@@ -1,7 +1,7 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import MainPicture from '../client/MainPicture';
+import MainPicture from '../client/components/MainPicture';
 
 Enzyme.configure({ adapter: new Adapter() });
 

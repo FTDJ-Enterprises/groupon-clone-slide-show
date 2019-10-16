@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import MainPicture from './MainPicture';
+import SlideShow from './components/SlideShow';
+import getImages from './api/getImages';
 
-import './index.css';
+const App = () => {
+  const [productImages, setProductImages] = useState([]);
+
+  useEffect(() => {
+    getImages().then(setProductImages);
+  }, []);
+
+  return <SlideShow productImages={productImages} />;
+};
 
 ReactDOM.render(
-  <MainPicture pictureUrl="https://via.placeholder.com/650x400" />,
+  <App />,
   document.getElementById('app')
 );
