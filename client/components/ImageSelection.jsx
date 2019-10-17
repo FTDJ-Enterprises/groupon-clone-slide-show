@@ -7,9 +7,10 @@ const Thumbnail = styled.div`
   width: 57px;
   background-image: url(${(props) => props.productImage});
   background-size: cover;
-  margin: 0px 5px;
   border: ${(props) => (props.selected ? '3px solid teal;' : 'none;')}
   border-radius: 5px;
+  cursor: pointer;
+  margin: 0px 5px;
   &:first-child {
     margin: 0px 5px 0px 0px;
   }
@@ -21,7 +22,6 @@ const Wrapper = styled.div`
   flex-wrap: no-wrap;
   align-items: center;
   margin: 10px 0px;
-  cursor: pointer;
 `;
 
 const ImageSelection = ({ productImages, selectedImageIndex, selectImage }) => {
@@ -31,7 +31,7 @@ const ImageSelection = ({ productImages, selectedImageIndex, selectImage }) => {
         <Thumbnail
           productImage={productImage}
           selected={selectedImageIndex === i}
-          key={i}
+          key={productImage}
           onClick={() => selectImage(i)}
           id={`thumbnail-${i}`}
         />
