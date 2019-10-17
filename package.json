@@ -39,7 +39,6 @@
     "jest": "^24.9.0",
     "jsdom": "^15.2.0",
     "nodemon": "^1.19.3",
-    "react-test-renderer": "^16.10.2",
     "style-loader": "^1.0.0",
     "supertest": "^4.0.2",
     "webpack": "^4.41.0",
@@ -47,7 +46,6 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "faker": "^4.1.0",
     "mongoose": "^5.7.4",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
@@ -59,6 +57,8 @@
     "coveragePathIgnorePatterns": [
       "/node_modules"
     ],
-    "setupFilesAfterEnv": ["./tests/setup.js"]
+    "setupFilesAfterEnv": [
+      "./tests/setup.js"
+    ]
   }
 }
