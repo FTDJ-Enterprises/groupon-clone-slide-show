@@ -7,7 +7,6 @@ const outputArray = [];
 // Create 100 records
 const numRecords = 100;
 for (let i = 1; i <= numRecords; i++) {
-
   // Selection of ids from Picsum images for pictures that resemble products
   const picsumImageIds = [445, 3, 225, 21, 20, 201, 2, 180, 160, 119];
 
