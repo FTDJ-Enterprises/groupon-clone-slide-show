@@ -36,7 +36,7 @@ const Polyline = styled.polyline.attrs(({ direction }) => ({
 const CircleChevron = ({ direction, handleClick, length }) => {
   const [hover, setHover] = useState(false);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = () => {
     setHover(true);
   };
 

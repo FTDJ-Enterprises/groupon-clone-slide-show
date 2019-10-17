@@ -24,21 +24,19 @@ const Wrapper = styled.div`
   margin: 10px 0px;
 `;
 
-const ImageSelection = ({ productImages, selectedImageIndex, selectImage }) => {
-  return (
-    <Wrapper>
-      {productImages.map((productImage, i) => (
-        <Thumbnail
-          productImage={productImage}
-          selected={selectedImageIndex === i}
-          key={productImage}
-          onClick={() => selectImage(i)}
-          id={`thumbnail-${i}`}
-        />
-      ))}
-    </Wrapper>
-  );
-};
+const ImageSelection = ({ productImages, selectedImageIndex, selectImage }) => (
+  <Wrapper>
+    {productImages.map((productImage, i) => (
+      <Thumbnail
+        productImage={productImage}
+        selected={selectedImageIndex === i}
+        key={productImage}
+        onClick={() => selectImage(i)}
+        id={`thumbnail-${i}`}
+      />
+    ))}
+  </Wrapper>
+);
 
 ImageSelection.propTypes = {
   productImages: PropTypes.arrayOf(PropTypes.string).isRequired,
