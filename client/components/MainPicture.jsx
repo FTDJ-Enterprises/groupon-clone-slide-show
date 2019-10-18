@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import CircleChevron from './CircleChevron';
 
 const Mask = styled.div`
   overflow: hidden;
   height: 400px;
   width: 650px;
+  cursor: zoom-in;
+  user-select: none;
 `;
 
 const Img = styled.img`
@@ -14,9 +17,14 @@ const Img = styled.img`
   transform: scale(${(props) => props.scale});
 `;
 
-const MainPicture = ({ pictureUrl }) => {
+const Wrapper = styled.div`
+  display: inline-block;
+`;
+
+const MainPicture = ({ pictureUrl, increaseSelectedImage, decreaseSelectedImage }) => {
   const [transformOrigin, setTransformOrigin] = useState('50% 50%');
   const [scale, setScale] = useState(1);
+  const [chevronDisplay, setChevronDisplay] = useState(false);
 
   const handleMouseLeave = () => {
     setScale(1);
@@ -31,24 +39,34 @@ const MainPicture = ({ pictureUrl }) => {
   };
 
   return (
-    <Mask
-      onMouseLeave={handleMouseLeave}
-      onMouseMove={handleMouseMove}
-      className="mask"
+    <Wrapper
+      onMouseEnter={() => setChevronDisplay(true)}
+      onMouseLeave={() => setChevronDisplay(false)}
+      className="wrapper"
     >
-      <Img
-        src={pictureUrl}
-        alt="Main product"
-        scale={scale}
-        transformOrigin={transformOrigin}
-        className="main-picture"
-      />
-    </Mask>
+      <Mask
+        onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
+        className="mask"
+      >
+        <Img
+          src={pictureUrl}
+          alt="Main product"
+          scale={scale}
+          transformOrigin={transformOrigin}
+          className="main-picture"
+        />
+      </Mask>
+      {chevronDisplay ? <CircleChevron direction="left" handleClick={decreaseSelectedImage} length={60} /> : null}
+      {chevronDisplay ? <CircleChevron direction="right" handleClick={increaseSelectedImage} length={60} /> : null}
+    </Wrapper>
   );
 };
 
 MainPicture.propTypes = {
-  pictureUrl: PropTypes.string.isRequired
+  pictureUrl: PropTypes.string.isRequired,
+  increaseSelectedImage: PropTypes.func.isRequired,
+  decreaseSelectedImage: PropTypes.func.isRequired,
 };
 
 Img.propTypes = {

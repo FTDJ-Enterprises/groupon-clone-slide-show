@@ -6,7 +6,7 @@
   },
   "overrides":  [
     {
-      "files": ["server/*.js", "db/index.js", "fakeDataGen.js"],
+      "files": ["server/*.js", "db/index.js", "fakeDataGen.js", "client/api/getImages.js"],
       "rules": {
         "no-console": 0
       }

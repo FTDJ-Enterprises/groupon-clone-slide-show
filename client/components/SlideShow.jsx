@@ -26,8 +26,10 @@ const SlideShow = ({ productImages }) => {
 
   return (
     <div>
-      <MainPicture pictureUrl={productImages[selectedImageIndex]
-        || 'https://via.placeholder.com/650x400'}
+      <MainPicture
+        pictureUrl={productImages[selectedImageIndex] || 'https://via.placeholder.com/650x400'}
+        increaseSelectedImage={increaseSelectedImage}
+        decreaseSelectedImage={decreaseSelectedImage}
       />
       <ImageSelection
         productImages={productImages}
