@@ -36,18 +36,15 @@ const Polyline = styled.polyline.attrs(({ direction }) => ({
 const CircleChevron = ({ direction, handleClick, length }) => {
   const [hover, setHover] = useState(false);
 
-  const handleMouseMove = () => {
-    setHover(true);
-  };
-
   return (
-    <Svg length={length} direction={direction}>
+    <Svg length={length} direction={direction} className="circle-chevron">
       <G
-        onMouseMove={handleMouseMove}
+        onMouseMove={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         onClick={() => handleClick()}
+        className="g"
       >
-        <Circle hover={hover} />
+        <Circle hover={hover} className="circle" />
         <Polyline direction={direction} hover={hover} />
       </G>
     </Svg>

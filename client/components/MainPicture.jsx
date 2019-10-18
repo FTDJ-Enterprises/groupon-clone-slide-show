@@ -42,6 +42,7 @@ const MainPicture = ({ pictureUrl, increaseSelectedImage, decreaseSelectedImage 
     <Wrapper
       onMouseEnter={() => setChevronDisplay(true)}
       onMouseLeave={() => setChevronDisplay(false)}
+      className="wrapper"
     >
       <Mask
         onMouseLeave={handleMouseLeave}

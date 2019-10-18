@@ -5,6 +5,7 @@
   "main": "server/.js",
   "scripts": {
     "test": "jest --verbose",
+    "test-coverage": "jest --verbose --coverage",
     "start": "node server/server.js",
     "dev-server": "nodemon server/server.js",
     "seed-data": "node fakeDataGen.js && mongoimport --db groupon-slide-show --collection productImages --file fakeData.json --jsonArray --drop",
