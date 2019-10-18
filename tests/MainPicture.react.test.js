@@ -1,10 +1,7 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import MainPicture from '../client/components/MainPicture';
 import CircleChevron from '../client/components/CircleChevron';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('MainPicture Component', () => {
   test('MainPicture zooms and pans according to the location of the mouseover', () => {

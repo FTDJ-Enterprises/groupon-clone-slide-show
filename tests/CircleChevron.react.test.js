@@ -1,9 +1,6 @@
 import React from 'react';
 import Enzyme, { shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import CircleChevron from '../client/components/CircleChevron';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe('CircleChevron Component', () => {
   test('It\'s hover state changes on hover', () => {

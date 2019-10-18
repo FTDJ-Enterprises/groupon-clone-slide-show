@@ -1,12 +1,9 @@
 import React from 'react';
 import Enzyme, { mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import SlideShow from '../client/components/SlideShow';
 import ImageSelection from '../client/components/ImageSelection';
 import MainPicture from '../client/components/MainPicture';
 import CircleChevron from '../client/components/CircleChevron';
-
-Enzyme.configure({ adapter: new Adapter() });
 
 let wrapper;
 
