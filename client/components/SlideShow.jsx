@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import MainPicture from './MainPicture';
 import ImageSelection from './ImageSelection';
+import HoverMessage from './HoverMessage';
 
 const SlideShow = ({ productImages }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -31,6 +32,7 @@ const SlideShow = ({ productImages }) => {
         increaseSelectedImage={increaseSelectedImage}
         decreaseSelectedImage={decreaseSelectedImage}
       />
+      <HoverMessage />
       <ImageSelection
         productImages={productImages}
         selectedImageIndex={selectedImageIndex}
