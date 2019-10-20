@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import CircleChevron from '../client/components/CircleChevron';
 
 describe('CircleChevron Component', () => {
