@@ -1,10 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  entry: './client/index.jsx',
+  entry: {
+    main: './client/index.jsx',
+    vendor: ['styled-components'],
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -12,5 +15,14 @@ module.exports = {
       { test: /\.css$/, use: ['style-loader', 'css-loader'] }
     ],
   },
-  resolve: { extensions: ['.js', '.jsx'] }
+  resolve: { extensions: ['.js', '.jsx'] },
+  optimization: {
+    splitChunks: {
+      minChunks: Infinity,
+      name: true
+    },
+    runtimeChunk: {
+      name: 'vendor'
+    }
+  }
 };
