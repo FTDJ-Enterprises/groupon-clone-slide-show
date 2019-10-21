@@ -15,6 +15,7 @@ const Img = styled.img`
   transition: transform .15s, transform-origin .15s;
   transform-origin: ${(props) => props.transformOrigin};
   transform: scale(${(props) => props.scale});
+  border-radius: 5px;
 `;
 
 const Wrapper = styled.div`

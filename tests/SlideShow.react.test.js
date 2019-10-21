@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { mount } from 'enzyme';
+import { mount } from 'enzyme';
 import SlideShow from '../client/components/SlideShow';
 import ImageSelection from '../client/components/ImageSelection';
 import MainPicture from '../client/components/MainPicture';

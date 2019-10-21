@@ -1,5 +1,5 @@
 import React from 'react';
-import Enzyme, { shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import MainPicture from '../client/components/MainPicture';
 import CircleChevron from '../client/components/CircleChevron';
 
