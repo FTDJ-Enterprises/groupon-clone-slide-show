@@ -36,8 +36,15 @@ const MainPicture = ({ pictureUrl, increaseSelectedImage, decreaseSelectedImage 
 
   const handleMouseMove = (e) => {
     const maskBoundaries = maskElement.current.getBoundingClientRect();
-    const x = ((e.pageX - maskBoundaries.left) / maskBoundaries.width) * 100;
-    const y = ((e.pageY - maskBoundaries.top) / maskBoundaries.height) * 100;
+
+    const coords = {
+      x: e.pageX - (maskBoundaries.left + window.pageXOffset),
+      y: e.pageY - (maskBoundaries.top + window.pageYOffset)
+    };
+
+    const x = (coords.x / maskBoundaries.width) * 100;
+    const y = (coords.y / maskBoundaries.height) * 100;
+
     setTransformOrigin(`${x}% ${y}%`);
     setScale(1.5);
   };
