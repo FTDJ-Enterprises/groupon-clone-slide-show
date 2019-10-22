@@ -15,5 +15,5 @@ const App = () => {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('app')
+  document.getElementById('slide-show')
 );
