@@ -12,7 +12,7 @@ const Svg = styled.svg.attrs(({ length }) => ({
   stroke-linejoin: round;
   position: absolute;
   top: ${(props) => 200 - (props.length / 2)}px;
-  left: ${(props) => (props.direction === 'left' ? 15 : 650 - (props.length))}px;
+  left: ${(props) => (props.direction === 'left' ? 15 : 650 - (props.length) - 15)}px;
 `;
 
 const Circle = styled.circle`
