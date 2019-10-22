@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import CircleChevron from './CircleChevron';
@@ -20,12 +20,14 @@ const Img = styled.img`
 
 const Wrapper = styled.div`
   display: inline-block;
+  position: relative;
 `;
 
 const MainPicture = ({ pictureUrl, increaseSelectedImage, decreaseSelectedImage }) => {
   const [transformOrigin, setTransformOrigin] = useState('50% 50%');
   const [scale, setScale] = useState(1);
   const [chevronDisplay, setChevronDisplay] = useState(false);
+  const maskElement = useRef(null);
 
   const handleMouseLeave = () => {
     setScale(1);
@@ -33,8 +35,9 @@ const MainPicture = ({ pictureUrl, increaseSelectedImage, decreaseSelectedImage 
   };
 
   const handleMouseMove = (e) => {
-    const x = ((e.pageX - e.target.offsetLeft) / e.target.offsetWidth) * 100;
-    const y = ((e.pageY - e.target.offsetTop) / e.target.offsetHeight) * 100;
+    const maskBoundaries = maskElement.current.getBoundingClientRect();
+    const x = ((e.pageX - maskBoundaries.left) / maskBoundaries.width) * 100;
+    const y = ((e.pageY - maskBoundaries.top) / maskBoundaries.height) * 100;
     setTransformOrigin(`${x}% ${y}%`);
     setScale(1.5);
   };
@@ -48,6 +51,7 @@ const MainPicture = ({ pictureUrl, increaseSelectedImage, decreaseSelectedImage 
       <Mask
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}
+        ref={maskElement}
         className="mask"
       >
         <Img
