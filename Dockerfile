@@ -10,6 +10,4 @@ RUN npm install
 
 EXPOSE 3002
 
-CMD ["npm", "run", "webpack-build"]
-
 CMD ["npm", "start"]
