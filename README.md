@@ -33,6 +33,8 @@
 
 `npm run dev-server` -- will run the development server and watch for changes.
 
+**IMPORTANT**: After you've seeded the database, built the bundles, and started up your server, you can confirm that everything is operating as intended by visiting `http://localhost:3002?productId=1` in your browser. This component identified which productId to render images according to the `productId` url query string.
+
 ## Development
 
 ### Installing Dependencies
@@ -43,3 +45,8 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
+
+## Deploy via Docker
+
+1. Use the `docker-compose.yml` file to compose your containers/images: `docker-compose up`.
+2. Seed the database by following the instructions in `/mongo-seed/instructions.md`.
