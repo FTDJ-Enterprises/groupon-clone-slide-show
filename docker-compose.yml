@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  server:
+    image: thomasij813/groupon-clone-slide-show-server
+    depends_on:
+      - 'mongo'
+    ports:
+      - 3002:3002
+  
+  mongo:
+    image: thomasij813/groupon-clone-slide-show-mongo
+    ports:
+      - 27017:27017
